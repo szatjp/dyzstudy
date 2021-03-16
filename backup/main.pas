@@ -6,18 +6,20 @@ interface
 
 uses
   Classes, SysUtils, SQLite3Conn, SQLDB, SQLDBLib, dbf, DB, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, DBGrids, sqlite3dyn;
+  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, sqlite3dyn;
 
 type
 
-  { TForm1 }
+  { Tfrmmain }
 
-  TForm1 = class(TForm)
+  Tfrmmain = class(TForm)
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
     Memo1: TMemo;
     SQLDBLibraryLoader1: TSQLDBLibraryLoader;
     dyzdbconn: TSQLite3Connection;
@@ -26,6 +28,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure dyzdbconnAfterConnect(Sender: TObject);
   private
 
@@ -34,20 +37,22 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmmain: Tfrmmain;
 
 implementation
 
+uses wordedit;
+
 {$R *.lfm}
 
-{ TForm1 }
+{ Tfrmmain }
 
-procedure TForm1.dyzdbconnAfterConnect(Sender: TObject);
+procedure Tfrmmain.dyzdbconnAfterConnect(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure Tfrmmain.Button1Click(Sender: TObject);
 begin
   dyzdbconn.Close;
   dyzdbconn.CharSet := PChar('UTF8');
@@ -73,22 +78,30 @@ begin
   end;
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure Tfrmmain.Button2Click(Sender: TObject);
 begin
   dyzdbconn.Open;
   SQLTransaction1.StartTransaction;
   //if dyzdbconn.GetTableNames(''):
-  //dyzdbconn.ExecuteDirect('create table tbl_duoyinzi (fid int primary key not null, fword varchar(6) not null);');
-  dyzdbconn.ExecuteDirect('create table tbl_pinyin (fid int primary key not null, fduoyinzi_id int not null,'
-                   + 'fpinyin varchar(10) not null);');
-  //dyzdbconn.ExecuteDirect('create table tbl_ciyu (fid int primary key not null, fpinyin_id int not null,'
-  //                 + 'fciyu varchar(20) not null);');
+  dyzdbconn.ExecuteDirect('create table tbl_duoyinzi (fid integer primary key autoincrement, fduoyinzi varchar(6) unique not null);');
+  dyzdbconn.ExecuteDirect('create table tbl_pinyin (fid integer primary key autoincrement, fduoyinzi_id int not null,'
+                   + 'fpinyin varchar(10) not null, fciyu varchar(20) not null);');
+  dyzdbconn.ExecuteDirect('create table tbl_ciyu (fid integer primary key autoincrement, fpinyin_id int not null,'
+                   + 'fciyu varchar(20) not null);');
   SQLTransaction1.Commit;
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure Tfrmmain.Button3Click(Sender: TObject);
 begin
   SQLQuery1.Active := True;
+end;
+
+procedure Tfrmmain.Button4Click(Sender: TObject);
+//var
+//  frmdyzedit: Tfrmdyzedit;
+begin
+  if (frmdyzedit = nil) then Application.CreateForm(Tfrmdyzedit, frmdyzedit);
+    frmdyzedit.Show;
 end;
 
 end.

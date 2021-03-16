@@ -1,0 +1,89 @@
+object frmdyzedit: Tfrmdyzedit
+  Left = 456
+  Height = 371
+  Top = 284
+  Width = 503
+  Caption = 'frmdyzedit'
+  ClientHeight = 371
+  ClientWidth = 503
+  LCLVersion = '2.0.12.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 105
+    Top = 0
+    Width = 503
+    Align = alTop
+    Caption = '新增1'
+    ClientHeight = 83
+    ClientWidth = 499
+    TabOrder = 0
+    object Edit1: TEdit
+      Left = 37
+      Height = 25
+      Top = 21
+      Width = 80
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 0
+    Height = 105
+    Top = 105
+    Width = 503
+    Align = alTop
+    Caption = '新增2'
+    ClientHeight = 83
+    ClientWidth = 499
+    TabOrder = 1
+    object Edit2: TEdit
+      Left = 43
+      Height = 25
+      Top = 20
+      Width = 80
+      TabOrder = 0
+      Text = 'Edit2'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 321
+    Width = 503
+    Align = alBottom
+    Caption = 'Panel1'
+    ClientHeight = 50
+    ClientWidth = 503
+    TabOrder = 2
+    OnClick = Panel1Click
+    object BitBtn1: TBitBtn
+      Left = 88
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = '确定'
+      TabOrder = 0
+    end
+    object BitBtn2: TBitBtn
+      Left = 14
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = '新增'
+      TabOrder = 1
+    end
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.dyzdbconn
+    Transaction = Form1.SQLTransaction1
+    Params = <>
+    Left = 368
+    Top = 24
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 288
+    Top = 24
+  end
+end
