@@ -85,9 +85,10 @@ begin
   //if dyzdbconn.GetTableNames(''):
   dyzdbconn.ExecuteDirect('create table tbl_duoyinzi (fid integer primary key autoincrement, fduoyinzi varchar(6) unique not null);');
   dyzdbconn.ExecuteDirect('create table tbl_pinyin (fid integer primary key autoincrement, fduoyinzi_id int not null,'
-                   + 'fpinyin varchar(10) not null, fciyu varchar(20) not null);');
-  dyzdbconn.ExecuteDirect('create table tbl_ciyu (fid integer primary key autoincrement, fpinyin_id int not null,'
-                   + 'fciyu varchar(20) not null);');
+                   + 'fpinyin varchar(10) not null, fciyu varchar(20) not null);'
+                   + 'create unique index zipinyin on tbl_pinyin(fduoyinzi_id, fpinyin);');
+  //dyzdbconn.ExecuteDirect('create table tbl_ciyu (fid integer primary key autoincrement, fpinyin_id int not null,'
+  //                 + 'fciyu varchar(20) not null);');
   SQLTransaction1.Commit;
 end;
 

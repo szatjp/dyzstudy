@@ -103,7 +103,7 @@ object frmmain: Tfrmmain
     Database = dyzdbconn
     Transaction = SQLTransaction1
     SQL.Strings = (
-      'select fword from tbl_duoyinzi'
+      'select fduoyinzi from tbl_duoyinzi'
     )
     Options = [sqoAutoApplyUpdates]
     Params = <>
