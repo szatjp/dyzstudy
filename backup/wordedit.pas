@@ -18,11 +18,18 @@ type
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
     BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
+    BitBtn7: TBitBtn;
+    BitBtn8: TBitBtn;
+    BitBtn9: TBitBtn;
     DataSource1: TDataSource;
+    DataSource2: TDataSource;
     DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
     Edit1: TEdit;
-    Edit2: TEdit;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     Panel1: TPanel;
@@ -33,6 +40,7 @@ type
     Panel6: TPanel;
     Panel7: TPanel;
     SQLQuery1: TSQLQuery;
+    SQLQuery2: TSQLQuery;
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
@@ -41,6 +49,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -90,6 +99,11 @@ begin
   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
 end;
 
+procedure Tfrmdyzedit.BitBtn7Click(Sender: TObject);
+begin
+  SQLQuery1.Append;
+end;
+
 procedure Tfrmdyzedit.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   CloseAction := caFree;
@@ -98,7 +112,7 @@ end;
 
 procedure Tfrmdyzedit.FormCreate(Sender: TObject);
 begin
-
+  Edit1.SelText:='插入字符串';
 end;
 
 procedure Tfrmdyzedit.FormShow(Sender: TObject);

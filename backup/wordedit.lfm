@@ -1,157 +1,192 @@
 object frmdyzedit: Tfrmdyzedit
   Left = 385
-  Height = 433
+  Height = 541
   Top = 222
-  Width = 574
+  Width = 949
   Caption = 'frmdyzedit'
-  ClientHeight = 433
-  ClientWidth = 574
+  ClientHeight = 541
+  ClientWidth = 949
+  DesignTimePPI = 120
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '2.0.12.0'
   object GroupBox1: TGroupBox
     Left = 0
-    Height = 176
+    Height = 220
     Top = 0
-    Width = 574
+    Width = 949
     Align = alTop
     Caption = '新增1'
-    ClientHeight = 154
-    ClientWidth = 570
+    ClientHeight = 195
+    ClientWidth = 945
+    ParentFont = False
     TabOrder = 0
     object Panel2: TPanel
-      Left = 320
-      Height = 154
+      Left = 633
+      Height = 195
       Top = 0
-      Width = 250
+      Width = 312
       Align = alRight
       Caption = 'Panel2'
-      ClientHeight = 154
-      ClientWidth = 250
+      ClientHeight = 195
+      ClientWidth = 312
+      ParentFont = False
       TabOrder = 0
       object Edit1: TEdit
-        Left = 33
-        Height = 25
-        Top = 37
-        Width = 80
+        Left = 41
+        Height = 28
+        Top = 46
+        Width = 100
+        ParentFont = False
         TabOrder = 0
         Text = 'Edit1'
       end
       object BitBtn3: TBitBtn
-        Left = 37
-        Height = 30
-        Top = 82
-        Width = 75
+        Left = 46
+        Height = 38
+        Top = 102
+        Width = 94
         Caption = '编辑'
         OnClick = BitBtn3Click
+        ParentFont = False
         TabOrder = 1
       end
       object BitBtn4: TBitBtn
-        Left = 128
-        Height = 30
-        Top = 82
-        Width = 75
+        Left = 160
+        Height = 38
+        Top = 102
+        Width = 94
         Caption = '保存'
         OnClick = BitBtn4Click
+        ParentFont = False
         TabOrder = 2
       end
       object DBEdit1: TDBEdit
-        Left = 124
-        Height = 25
-        Top = 20
-        Width = 80
+        Left = 155
+        Height = 28
+        Top = 25
+        Width = 100
         DataSource = DataSource1
         CharCase = ecNormal
         MaxLength = 0
+        ParentFont = False
         TabOrder = 3
+      end
+      object BitBtn7: TBitBtn
+        Left = 48
+        Height = 38
+        Top = 136
+        Width = 94
+        Caption = '新增'
+        OnClick = BitBtn7Click
+        TabOrder = 4
       end
     end
     object Panel3: TPanel
       Left = 0
-      Height = 154
+      Height = 195
       Top = 0
-      Width = 320
+      Width = 633
       Align = alClient
       Caption = 'Panel3'
-      ClientHeight = 154
-      ClientWidth = 320
+      ClientHeight = 195
+      ClientWidth = 633
+      ParentFont = False
       TabOrder = 1
       object DBGrid1: TDBGrid
         Left = 1
-        Height = 152
+        Height = 193
         Top = 1
-        Width = 318
+        Width = 631
         Align = alClient
         Color = clWindow
         Columns = <>
         DataSource = DataSource1
+        ParentFont = False
         TabOrder = 0
       end
     end
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Height = 192
-    Top = 176
-    Width = 574
+    Height = 240
+    Top = 220
+    Width = 949
     Align = alTop
     Caption = '新增2'
-    ClientHeight = 170
-    ClientWidth = 570
+    ClientHeight = 215
+    ClientWidth = 945
+    ParentFont = False
     TabOrder = 1
     object Panel4: TPanel
       Left = 0
-      Height = 170
+      Height = 215
       Top = 0
-      Width = 320
+      Width = 633
       Align = alClient
       Caption = 'Panel4'
+      ClientHeight = 215
+      ClientWidth = 633
+      ParentFont = False
       TabOrder = 0
+      object DBGrid2: TDBGrid
+        Left = 1
+        Height = 213
+        Top = 1
+        Width = 631
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        TabOrder = 0
+      end
     end
     object Panel5: TPanel
-      Left = 320
-      Height = 170
+      Left = 633
+      Height = 215
       Top = 0
-      Width = 250
+      Width = 312
       Align = alRight
       Caption = 'Panel5'
-      ClientHeight = 170
-      ClientWidth = 250
+      ClientHeight = 215
+      ClientWidth = 312
+      ParentFont = False
       TabOrder = 1
       object Panel6: TPanel
         Left = 1
-        Height = 73
-        Top = 96
-        Width = 248
+        Height = 91
+        Top = 123
+        Width = 310
         Align = alBottom
         Caption = 'Panel6'
-        ClientHeight = 73
-        ClientWidth = 248
+        ClientHeight = 91
+        ClientWidth = 310
+        ParentFont = False
         TabOrder = 0
         object BitBtn5: TBitBtn
-          Left = 8
-          Height = 22
-          Top = 31
-          Width = 22
+          Left = 10
+          Height = 28
+          Top = 39
+          Width = 28
           Caption = 'á'
+          ParentFont = False
           TabOrder = 0
         end
         object ToolBar1: TToolBar
           Left = 1
-          Height = 26
           Top = 1
-          Width = 246
+          Width = 308
           Caption = 'ToolBar1'
+          ParentFont = False
           ShowCaptions = True
           TabOrder = 1
           object ToolButton2: TToolButton
-            Left = 24
+            Left = 30
             Top = 2
             Caption = 'á'
           end
           object ToolButton3: TToolButton
-            Left = 47
+            Left = 59
             Top = 2
             Caption = 'ǎ'
           end
@@ -161,7 +196,7 @@ object frmdyzedit: Tfrmdyzedit
             Caption = 'ā'
           end
           object ToolButton4: TToolButton
-            Left = 70
+            Left = 88
             Top = 2
             Caption = 'à'
           end
@@ -169,51 +204,89 @@ object frmdyzedit: Tfrmdyzedit
       end
       object Panel7: TPanel
         Left = 1
-        Height = 95
+        Height = 122
         Top = 1
-        Width = 248
+        Width = 310
         Align = alClient
         Caption = 'Panel7'
-        ClientHeight = 95
-        ClientWidth = 248
+        ClientHeight = 122
+        ClientWidth = 310
+        ParentFont = False
         TabOrder = 1
-        object Edit2: TEdit
-          Left = 64
-          Height = 25
+        object DBEdit2: TDBEdit
+          Left = 24
+          Height = 28
           Top = 24
-          Width = 80
+          Width = 100
+          CharCase = ecNormal
+          MaxLength = 0
           TabOrder = 0
-          Text = 'Edit2'
+        end
+        object DBEdit3: TDBEdit
+          Left = 184
+          Height = 28
+          Top = 24
+          Width = 100
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object BitBtn6: TBitBtn
+          Left = 24
+          Height = 38
+          Top = 72
+          Width = 94
+          Caption = '新增'
+          TabOrder = 2
+        end
+        object BitBtn8: TBitBtn
+          Left = 184
+          Height = 38
+          Top = 72
+          Width = 94
+          Caption = '保存'
+          TabOrder = 3
+        end
+        object BitBtn9: TBitBtn
+          Left = 104
+          Height = 38
+          Top = 72
+          Width = 94
+          Caption = '编辑'
+          TabOrder = 4
         end
       end
     end
   end
   object Panel1: TPanel
     Left = 0
-    Height = 50
-    Top = 383
-    Width = 574
+    Height = 62
+    Top = 479
+    Width = 949
     Align = alBottom
     Caption = 'Panel1'
-    ClientHeight = 50
-    ClientWidth = 574
+    ClientHeight = 62
+    ClientWidth = 949
+    ParentFont = False
     TabOrder = 2
     OnClick = Panel1Click
     object BitBtn1: TBitBtn
-      Left = 88
-      Height = 30
-      Top = 8
-      Width = 75
+      Left = 110
+      Height = 38
+      Top = 10
+      Width = 94
       Caption = '确定'
       OnClick = BitBtn1Click
+      ParentFont = False
       TabOrder = 0
     end
     object BitBtn2: TBitBtn
-      Left = 14
-      Height = 30
-      Top = 8
-      Width = 75
+      Left = 18
+      Height = 38
+      Top = 10
+      Width = 94
       Caption = '新增'
+      ParentFont = False
       TabOrder = 1
     end
   end
@@ -225,12 +298,22 @@ object frmdyzedit: Tfrmdyzedit
       'select * from tbl_duoyinzi'
     )
     Params = <>
-    Left = 248
-    Top = 32
+    Left = 310
+    Top = 40
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
-    Left = 152
-    Top = 32
+    Left = 190
+    Top = 40
+  end
+  object DataSource2: TDataSource
+    Left = 190
+    Top = 264
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Left = 304
+    Top = 264
   end
 end
