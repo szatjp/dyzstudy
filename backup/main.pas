@@ -102,7 +102,7 @@ procedure Tfrmmain.Button4Click(Sender: TObject);
 //  frmdyzedit: Tfrmdyzedit;
 begin
   if (frmdyzedit = nil) then Application.CreateForm(Tfrmdyzedit, frmdyzedit);
-    frmdyzedit.Show;
+    frmdyzedit.ShowModal;
 end;
 
 end.

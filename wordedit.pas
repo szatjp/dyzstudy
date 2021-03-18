@@ -75,6 +75,7 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
+    procedure DataSource2DataChange(Sender: TObject; Field: TField);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -84,6 +85,11 @@ type
     procedure ToolButton1Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
     procedure ToolButton3Click(Sender: TObject);
+    procedure ToolButton4Click(Sender: TObject);
+    procedure ToolButton6Click(Sender: TObject);
+    procedure ToolButton7Click(Sender: TObject);
+    procedure ToolButton8Click(Sender: TObject);
+    procedure ToolButton9Click(Sender: TObject);
   private
 
   public
@@ -111,7 +117,7 @@ begin
   //SQLQuery1.Open;
   SQLQuery2.SQL.Text := 'select from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
-  SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
+  SQLQuery2.Params.ParamByName('duoyinzi_id').Value := SQLQuery1.FieldValues['fid'];
   //SQLQuery1.ExecSQL();
   SQLQuery2.Open;
 end;
@@ -134,6 +140,31 @@ begin
 end;
 
 procedure Tfrmdyzedit.ToolButton3Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton4Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton6Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton7Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton8Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton9Click(Sender: TObject);
 begin
   DBEdit2.SelText:=TToolButton(Sender).Caption;
 end;
@@ -164,6 +195,11 @@ end;
 procedure Tfrmdyzedit.BitBtn7Click(Sender: TObject);
 begin
   SQLQuery1.Append;
+end;
+
+procedure Tfrmdyzedit.DataSource2DataChange(Sender: TObject; Field: TField);
+begin
+
 end;
 
 procedure Tfrmdyzedit.FormClose(Sender: TObject; var CloseAction: TCloseAction);
