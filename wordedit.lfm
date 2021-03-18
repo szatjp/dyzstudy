@@ -1,72 +1,72 @@
 object frmdyzedit: Tfrmdyzedit
   Left = 385
-  Height = 541
+  Height = 485
   Top = 222
-  Width = 949
+  Width = 798
   Caption = 'frmdyzedit'
-  ClientHeight = 541
-  ClientWidth = 949
-  DesignTimePPI = 120
+  ClientHeight = 485
+  ClientWidth = 798
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
+  Position = poMainFormCenter
   LCLVersion = '2.0.12.0'
   object GroupBox1: TGroupBox
     Left = 0
-    Height = 220
+    Height = 176
     Top = 0
-    Width = 949
+    Width = 798
     Align = alTop
     Caption = '新增1'
-    ClientHeight = 195
-    ClientWidth = 945
+    ClientHeight = 154
+    ClientWidth = 794
     ParentFont = False
     TabOrder = 0
     object Panel2: TPanel
-      Left = 633
-      Height = 195
+      Left = 478
+      Height = 154
       Top = 0
-      Width = 312
+      Width = 316
       Align = alRight
       Caption = 'Panel2'
-      ClientHeight = 195
-      ClientWidth = 312
+      ClientHeight = 154
+      ClientWidth = 316
       ParentFont = False
       TabOrder = 0
       object Edit1: TEdit
-        Left = 41
-        Height = 28
-        Top = 46
-        Width = 100
+        Left = 33
+        Height = 25
+        Top = 37
+        Width = 80
         ParentFont = False
         TabOrder = 0
         Text = 'Edit1'
       end
       object BitBtn3: TBitBtn
-        Left = 112
-        Height = 38
-        Top = 136
-        Width = 94
+        Left = 90
+        Height = 30
+        Top = 109
+        Width = 75
         Caption = '编辑'
         OnClick = BitBtn3Click
         ParentFont = False
         TabOrder = 1
       end
       object BitBtn4: TBitBtn
-        Left = 208
-        Height = 38
-        Top = 136
-        Width = 94
+        Left = 166
+        Height = 30
+        Top = 109
+        Width = 75
         Caption = '保存'
         OnClick = BitBtn4Click
         ParentFont = False
         TabOrder = 2
       end
       object DBEdit1: TDBEdit
-        Left = 155
-        Height = 28
-        Top = 25
-        Width = 100
+        Left = 124
+        Height = 25
+        Top = 20
+        Width = 80
         DataSource = DataSource1
         CharCase = ecNormal
         MaxLength = 0
@@ -74,34 +74,41 @@ object frmdyzedit: Tfrmdyzedit
         TabOrder = 3
       end
       object BitBtn7: TBitBtn
-        Left = 16
-        Height = 38
-        Top = 136
-        Width = 94
+        Left = 13
+        Height = 30
+        Top = 109
+        Width = 75
         Caption = '新增'
         OnClick = BitBtn7Click
+        ParentFont = False
         TabOrder = 4
       end
     end
     object Panel3: TPanel
       Left = 0
-      Height = 195
+      Height = 154
       Top = 0
-      Width = 633
+      Width = 478
       Align = alClient
       Caption = 'Panel3'
-      ClientHeight = 195
-      ClientWidth = 633
+      ClientHeight = 154
+      ClientWidth = 478
       ParentFont = False
       TabOrder = 1
-      object DBGrid1: TDBGrid
+      object grddyz: TDBGrid
         Left = 1
-        Height = 193
+        Height = 152
         Top = 1
-        Width = 631
+        Width = 476
         Align = alClient
         Color = clWindow
-        Columns = <>
+        Columns = <        
+          item
+            Title.Caption = 'ID'
+          end        
+          item
+            Title.Caption = '多音字'
+          end>
         DataSource = DataSource1
         ParentFont = False
         TabOrder = 0
@@ -110,149 +117,297 @@ object frmdyzedit: Tfrmdyzedit
   end
   object GroupBox2: TGroupBox
     Left = 0
-    Height = 240
-    Top = 220
-    Width = 949
+    Height = 200
+    Top = 176
+    Width = 798
     Align = alTop
     Caption = '新增2'
-    ClientHeight = 215
-    ClientWidth = 945
+    ClientHeight = 178
+    ClientWidth = 794
     ParentFont = False
     TabOrder = 1
     object Panel4: TPanel
       Left = 0
-      Height = 215
+      Height = 178
       Top = 0
-      Width = 633
+      Width = 478
       Align = alClient
       Caption = 'Panel4'
-      ClientHeight = 215
-      ClientWidth = 633
+      ClientHeight = 178
+      ClientWidth = 478
       ParentFont = False
       TabOrder = 0
       object DBGrid2: TDBGrid
         Left = 1
-        Height = 213
+        Height = 176
         Top = 1
-        Width = 631
+        Width = 476
         Align = alClient
         Color = clWindow
         Columns = <>
+        ParentFont = False
         TabOrder = 0
       end
     end
     object Panel5: TPanel
-      Left = 633
-      Height = 215
+      Left = 478
+      Height = 178
       Top = 0
-      Width = 312
+      Width = 316
       Align = alRight
       Caption = 'Panel5'
-      ClientHeight = 215
-      ClientWidth = 312
+      ClientHeight = 178
+      ClientWidth = 316
       ParentFont = False
       TabOrder = 1
       object Panel6: TPanel
         Left = 1
-        Height = 91
-        Top = 123
-        Width = 310
+        Height = 81
+        Top = 96
+        Width = 314
         Align = alBottom
         Caption = 'Panel6'
-        ClientHeight = 91
-        ClientWidth = 310
+        ClientHeight = 81
+        ClientWidth = 314
         ParentFont = False
         TabOrder = 0
-        object BitBtn5: TBitBtn
-          Left = 10
-          Height = 28
-          Top = 39
-          Width = 28
-          Caption = 'á'
-          ParentFont = False
-          TabOrder = 0
-        end
         object ToolBar1: TToolBar
           Left = 1
+          Height = 26
           Top = 1
-          Width = 308
+          Width = 312
           Caption = 'ToolBar1'
           ParentFont = False
           ShowCaptions = True
-          TabOrder = 1
+          TabOrder = 0
+          OnClick = ToolBar1Click
           object ToolButton2: TToolButton
-            Left = 30
+            Left = 24
             Top = 2
             Caption = 'á'
+            OnClick = ToolButton2Click
           end
           object ToolButton3: TToolButton
-            Left = 59
+            Left = 47
             Top = 2
             Caption = 'ǎ'
+            OnClick = ToolButton3Click
           end
           object ToolButton1: TToolButton
             Left = 1
             Top = 2
             Caption = 'ā'
+            OnClick = ToolButton1Click
           end
           object ToolButton4: TToolButton
-            Left = 88
+            Left = 70
             Top = 2
             Caption = 'à'
+          end
+          object ToolButton5: TToolButton
+            Left = 93
+            Height = 22
+            Top = 2
+            Caption = 'ToolButton5'
+            Style = tbsSeparator
+          end
+          object ToolButton6: TToolButton
+            Left = 101
+            Top = 2
+            Caption = 'ō'
+          end
+          object ToolButton7: TToolButton
+            Left = 124
+            Top = 2
+            Caption = 'ó'
+          end
+          object ToolButton8: TToolButton
+            Left = 147
+            Top = 2
+            Caption = 'ǒ'
+          end
+          object ToolButton9: TToolButton
+            Left = 170
+            Top = 2
+            Caption = 'ò'
+          end
+        end
+        object ToolBar2: TToolBar
+          Left = 1
+          Height = 26
+          Top = 27
+          Width = 312
+          Caption = 'ToolBar2'
+          ParentFont = False
+          ShowCaptions = True
+          TabOrder = 1
+          object ToolButton10: TToolButton
+            Left = 24
+            Top = 2
+            Caption = 'é'
+          end
+          object ToolButton11: TToolButton
+            Left = 47
+            Top = 2
+            Caption = 'ě'
+          end
+          object ToolButton12: TToolButton
+            Left = 1
+            Top = 2
+            Caption = 'ē'
+          end
+          object ToolButton13: TToolButton
+            Left = 70
+            Top = 2
+            Caption = 'è'
+          end
+          object ToolButton14: TToolButton
+            Left = 93
+            Height = 22
+            Top = 2
+            Caption = 'ToolButton5'
+            Style = tbsSeparator
+          end
+          object ToolButton15: TToolButton
+            Left = 101
+            Top = 2
+            Caption = 'ī'
+          end
+          object ToolButton16: TToolButton
+            Left = 124
+            Top = 2
+            Caption = 'í'
+          end
+          object ToolButton17: TToolButton
+            Left = 147
+            Top = 2
+            Caption = 'ǐ'
+          end
+          object ToolButton18: TToolButton
+            Left = 170
+            Top = 2
+            Caption = 'ì'
+          end
+        end
+        object ToolBar3: TToolBar
+          Left = 1
+          Height = 26
+          Top = 53
+          Width = 312
+          Caption = 'ToolBar3'
+          ParentFont = False
+          ShowCaptions = True
+          TabOrder = 2
+          object ToolButton19: TToolButton
+            Left = 24
+            Top = 2
+            Caption = 'ú'
+          end
+          object ToolButton20: TToolButton
+            Left = 47
+            Top = 2
+            Caption = 'ǔ'
+          end
+          object ToolButton21: TToolButton
+            Left = 1
+            Top = 2
+            Caption = 'ū'
+          end
+          object ToolButton22: TToolButton
+            Left = 70
+            Top = 2
+            Caption = 'ù'
+          end
+          object ToolButton23: TToolButton
+            Left = 93
+            Height = 22
+            Top = 2
+            Caption = 'ToolButton5'
+            Style = tbsSeparator
+          end
+          object ToolButton24: TToolButton
+            Left = 101
+            Top = 2
+            Caption = 'ǖ'
+          end
+          object ToolButton25: TToolButton
+            Left = 124
+            Top = 2
+            Caption = 'ǘ'
+          end
+          object ToolButton26: TToolButton
+            Left = 147
+            Top = 2
+            Caption = 'ǚ'
+          end
+          object ToolButton27: TToolButton
+            Left = 170
+            Top = 2
+            Caption = 'ǜ'
+          end
+          object ToolButton28: TToolButton
+            Left = 193
+            Top = 2
+            Caption = 'ü'
           end
         end
       end
       object Panel7: TPanel
         Left = 1
-        Height = 122
+        Height = 95
         Top = 1
-        Width = 310
+        Width = 314
         Align = alClient
         Caption = 'Panel7'
-        ClientHeight = 122
-        ClientWidth = 310
+        ClientHeight = 95
+        ClientWidth = 314
         ParentFont = False
         TabOrder = 1
         object DBEdit2: TDBEdit
-          Left = 24
-          Height = 28
-          Top = 24
-          Width = 100
+          Left = 19
+          Height = 25
+          Top = 19
+          Width = 80
           CharCase = ecNormal
           MaxLength = 0
+          ParentFont = False
           TabOrder = 0
         end
         object DBEdit3: TDBEdit
-          Left = 184
-          Height = 28
-          Top = 24
-          Width = 100
+          Left = 147
+          Height = 25
+          Top = 19
+          Width = 80
           CharCase = ecNormal
           MaxLength = 0
+          ParentFont = False
           TabOrder = 1
         end
         object BitBtn6: TBitBtn
-          Left = 24
-          Height = 38
-          Top = 72
-          Width = 94
+          Left = 19
+          Height = 30
+          Top = 58
+          Width = 75
           Caption = '新增'
+          ParentFont = False
           TabOrder = 2
         end
         object BitBtn8: TBitBtn
-          Left = 215
-          Height = 38
-          Top = 72
-          Width = 94
+          Left = 172
+          Height = 30
+          Top = 58
+          Width = 75
           Caption = '保存'
+          ParentFont = False
           TabOrder = 3
         end
         object BitBtn9: TBitBtn
-          Left = 120
-          Height = 38
-          Top = 72
-          Width = 94
+          Left = 96
+          Height = 30
+          Top = 58
+          Width = 75
           Caption = '编辑'
+          ParentFont = False
           TabOrder = 4
         end
       end
@@ -260,31 +415,31 @@ object frmdyzedit: Tfrmdyzedit
   end
   object Panel1: TPanel
     Left = 0
-    Height = 62
-    Top = 479
-    Width = 949
+    Height = 50
+    Top = 435
+    Width = 798
     Align = alBottom
     Caption = 'Panel1'
-    ClientHeight = 62
-    ClientWidth = 949
+    ClientHeight = 50
+    ClientWidth = 798
     ParentFont = False
     TabOrder = 2
     OnClick = Panel1Click
     object BitBtn1: TBitBtn
-      Left = 110
-      Height = 38
-      Top = 10
-      Width = 94
+      Left = 88
+      Height = 30
+      Top = 8
+      Width = 75
       Caption = '确定'
       OnClick = BitBtn1Click
       ParentFont = False
       TabOrder = 0
     end
     object BitBtn2: TBitBtn
-      Left = 18
-      Height = 38
-      Top = 10
-      Width = 94
+      Left = 14
+      Height = 30
+      Top = 8
+      Width = 75
       Caption = '新增'
       ParentFont = False
       TabOrder = 1
@@ -292,28 +447,29 @@ object frmdyzedit: Tfrmdyzedit
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
+    AfterScroll = SQLQuery1AfterScroll
     Database = frmmain.dyzdbconn
     Transaction = frmmain.SQLTransaction1
     SQL.Strings = (
-      'select * from tbl_duoyinzi'
+      'select fid,fduoyinzi from tbl_duoyinzi'
     )
     Params = <>
-    Left = 310
-    Top = 40
+    Left = 248
+    Top = 32
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
-    Left = 190
-    Top = 40
+    Left = 152
+    Top = 32
   end
   object DataSource2: TDataSource
-    Left = 190
-    Top = 264
+    Left = 152
+    Top = 211
   end
   object SQLQuery2: TSQLQuery
     FieldDefs = <>
     Params = <>
-    Left = 304
-    Top = 264
+    Left = 243
+    Top = 211
   end
 end
