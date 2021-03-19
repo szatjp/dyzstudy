@@ -74,7 +74,9 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn8Click(Sender: TObject);
     procedure DataSource2DataChange(Sender: TObject; Field: TField);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -89,6 +91,7 @@ type
     procedure ToolButton6Click(Sender: TObject);
     procedure ToolButton7Click(Sender: TObject);
     procedure ToolButton8Click(Sender: TObject);
+    procedure ToolButton9Click(Sender: TObject);
   private
 
   public
@@ -114,9 +117,9 @@ end;
 procedure Tfrmdyzedit.SQLQuery1AfterScroll(DataSet: TDataSet);
 begin
   //SQLQuery1.Open;
-  SQLQuery2.SQL.Text := 'select from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
+  //SQLQuery2.SQL.Text := 'select * from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
-  SQLQuery2.Params.ParamByName('duoyinzi_id').Value := SQLQuery1.FieldValues['fid'];
+  SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
   //SQLQuery1.ExecSQL();
   SQLQuery2.Open;
 end;
@@ -163,6 +166,11 @@ begin
   DBEdit2.SelText:=TToolButton(Sender).Caption;
 end;
 
+procedure Tfrmdyzedit.ToolButton9Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
 procedure Tfrmdyzedit.BitBtn1Click(Sender: TObject);
 begin
   //SQLQuery1.Open;
@@ -186,9 +194,22 @@ begin
   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
 end;
 
+procedure Tfrmdyzedit.BitBtn6Click(Sender: TObject);
+begin
+  SQLQuery2.Append;
+  SQLQuery2.FieldValues['fduoyinzi_id'] := SQLQuery1.FieldValues['fid'];
+end;
+
 procedure Tfrmdyzedit.BitBtn7Click(Sender: TObject);
 begin
   SQLQuery1.Append;
+end;
+
+procedure Tfrmdyzedit.BitBtn8Click(Sender: TObject);
+begin
+  SQLQuery2.Post;
+  SQLQuery2.ApplyUpdates;
+  frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
 end;
 
 procedure Tfrmdyzedit.DataSource2DataChange(Sender: TObject; Field: TField);
@@ -209,10 +230,12 @@ end;
 
 procedure Tfrmdyzedit.FormShow(Sender: TObject);
 begin
-  //SQLQuery1.SQL.Text := 'select fduoyinzi from tbl_duoyinzi;';
+  //SQLQuery1.SQL.Text := 'select * fduoyinzi from tbl_duoyinzi;';
   //SQLQuery1.Active:=True;
   DBEdit1.DataField:='fduoyinzi';
   SQLQuery1.Active:=True;
+  DBEdit1.DataField:='fpinyin';
+  DBEdit1.DataField:='fciyu';
   grddyz.Columns[0].FieldName:='fid';
   grddyz.Columns[1].FieldName:='fduoyinzi';
 end;
