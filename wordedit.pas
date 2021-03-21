@@ -84,7 +84,11 @@ type
     procedure Panel1Click(Sender: TObject);
     procedure SQLQuery1AfterScroll(DataSet: TDataSet);
     procedure ToolBar1Click(Sender: TObject);
+    procedure ToolButton19Click(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
+    procedure ToolButton20Click(Sender: TObject);
+    procedure ToolButton21Click(Sender: TObject);
+    procedure ToolButton22Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
     procedure ToolButton3Click(Sender: TObject);
     procedure ToolButton4Click(Sender: TObject);
@@ -119,9 +123,13 @@ begin
   //SQLQuery1.Open;
   //SQLQuery2.SQL.Text := 'select * from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
-  SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
-  //SQLQuery1.ExecSQL();
-  SQLQuery2.Open;
+  if SQLQuery1.FieldValues['fid']<>null then
+    begin
+      SQLQuery2.Close;
+      SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
+      //SQLQuery1.ExecSQL();
+      SQLQuery2.Open;
+    end;
 end;
 
 procedure Tfrmdyzedit.ToolBar1Click(Sender: TObject);
@@ -129,10 +137,30 @@ begin
   //TToolButton(Sender).Caption;
 end;
 
+procedure Tfrmdyzedit.ToolButton19Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
 procedure Tfrmdyzedit.ToolButton1Click(Sender: TObject);
 begin
   //DBEdit2.text := TToolButton(Sender).Caption;
   //SelText 当前位置插入字符
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton20Click(Sender: TObject);
+begin
+   DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton21Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton22Click(Sender: TObject);
+begin
   DBEdit2.SelText:=TToolButton(Sender).Caption;
 end;
 
