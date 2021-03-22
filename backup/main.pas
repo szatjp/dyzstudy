@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, SQLite3Conn, SQLDB, SQLDBLib, dbf, DB, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, sqlite3dyn;
+  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, ExtCtrls, ComCtrls, sqlite3dyn;
 
 type
 
@@ -20,11 +20,13 @@ type
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
-    Memo1: TMemo;
+    Panel1: TPanel;
+    Panel2: TPanel;
     SQLDBLibraryLoader1: TSQLDBLibraryLoader;
     dyzdbconn: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    StatusBar1: TStatusBar;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

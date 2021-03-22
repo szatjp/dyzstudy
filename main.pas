@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, SQLite3Conn, SQLDB, SQLDBLib, dbf, DB, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, sqlite3dyn;
+  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, ExtCtrls, ComCtrls, sqlite3dyn;
 
 type
 
@@ -20,16 +20,19 @@ type
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
-    Memo1: TMemo;
+    Panel1: TPanel;
+    Panel2: TPanel;
     SQLDBLibraryLoader1: TSQLDBLibraryLoader;
     dyzdbconn: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    StatusBar1: TStatusBar;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure dyzdbconnAfterConnect(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
   private
 
   public
@@ -50,6 +53,13 @@ uses wordedit;
 procedure Tfrmmain.dyzdbconnAfterConnect(Sender: TObject);
 begin
 
+end;
+
+procedure Tfrmmain.Panel1Click(Sender: TObject);
+begin
+  SELECT fid,fduoyinzi
+FROM tbl_duoyinzi
+WHERE 1 < (select fduoyinzi_id,group_concat('['||fpinyin||']'||fciyu,',') from tbl_pinyin group by fduoyinzi_id)
 end;
 
 procedure Tfrmmain.Button1Click(Sender: TObject);
