@@ -2,10 +2,10 @@ object frmdyzedit: Tfrmdyzedit
   Left = 385
   Height = 606
   Top = 222
-  Width = 998
+  Width = 989
   Caption = 'frmdyzedit'
   ClientHeight = 606
-  ClientWidth = 998
+  ClientWidth = 989
   DesignTimePPI = 120
   OnClose = FormClose
   OnCreate = FormCreate
@@ -16,33 +16,24 @@ object frmdyzedit: Tfrmdyzedit
     Left = 0
     Height = 220
     Top = 0
-    Width = 998
+    Width = 989
     Align = alTop
     Caption = '新增1'
     ClientHeight = 195
-    ClientWidth = 994
+    ClientWidth = 985
     ParentFont = False
     TabOrder = 0
     object Panel2: TPanel
-      Left = 599
+      Left = 560
       Height = 195
       Top = 0
-      Width = 395
+      Width = 425
       Align = alRight
-      Caption = 'Panel2'
       ClientHeight = 195
-      ClientWidth = 395
+      ClientWidth = 425
       ParentFont = False
       TabOrder = 0
-      object Edit1: TEdit
-        Left = 41
-        Height = 28
-        Top = 46
-        Width = 100
-        ParentFont = False
-        TabOrder = 0
-        Text = 'Edit1'
-      end
+      OnClick = Panel2Click
       object BitBtn3: TBitBtn
         Left = 112
         Height = 38
@@ -51,7 +42,7 @@ object frmdyzedit: Tfrmdyzedit
         Caption = '编辑'
         OnClick = BitBtn3Click
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
       end
       object BitBtn4: TBitBtn
         Left = 208
@@ -61,18 +52,18 @@ object frmdyzedit: Tfrmdyzedit
         Caption = '保存'
         OnClick = BitBtn4Click
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 1
       end
       object DBEdit1: TDBEdit
-        Left = 155
+        Left = 16
         Height = 28
-        Top = 25
+        Top = 56
         Width = 100
         DataSource = DataSource1
         CharCase = ecNormal
         MaxLength = 0
         ParentFont = False
-        TabOrder = 3
+        TabOrder = 2
       end
       object BitBtn7: TBitBtn
         Left = 16
@@ -82,25 +73,33 @@ object frmdyzedit: Tfrmdyzedit
         Caption = '新增'
         OnClick = BitBtn7Click
         ParentFont = False
-        TabOrder = 4
+        TabOrder = 3
+      end
+      object Label1: TLabel
+        Left = 16
+        Height = 20
+        Top = 32
+        Width = 45
+        Caption = '多音字'
+        ParentColor = False
       end
     end
     object Panel3: TPanel
       Left = 0
       Height = 195
       Top = 0
-      Width = 599
+      Width = 560
       Align = alClient
       Caption = 'Panel3'
       ClientHeight = 195
-      ClientWidth = 599
+      ClientWidth = 560
       ParentFont = False
       TabOrder = 1
       object grddyz: TDBGrid
         Left = 1
         Height = 193
         Top = 1
-        Width = 597
+        Width = 558
         Align = alClient
         Color = clWindow
         Columns = <        
@@ -124,29 +123,29 @@ object frmdyzedit: Tfrmdyzedit
     Left = 0
     Height = 250
     Top = 220
-    Width = 998
+    Width = 989
     Align = alTop
     Caption = '新增2'
     ClientHeight = 225
-    ClientWidth = 994
+    ClientWidth = 985
     ParentFont = False
     TabOrder = 1
     object Panel4: TPanel
       Left = 0
       Height = 225
       Top = 0
-      Width = 599
+      Width = 558
       Align = alClient
       Caption = 'Panel4'
       ClientHeight = 225
-      ClientWidth = 599
+      ClientWidth = 558
       ParentFont = False
       TabOrder = 0
-      object DBGrid2: TDBGrid
+      object grdpinyin: TDBGrid
         Left = 1
         Height = 223
         Top = 1
-        Width = 597
+        Width = 556
         Align = alClient
         Color = clWindow
         Columns = <        
@@ -165,31 +164,31 @@ object frmdyzedit: Tfrmdyzedit
       end
     end
     object Panel5: TPanel
-      Left = 599
+      Left = 558
       Height = 225
       Top = 0
-      Width = 395
+      Width = 427
       Align = alRight
       Caption = 'Panel5'
       ClientHeight = 225
-      ClientWidth = 395
+      ClientWidth = 427
       ParentFont = False
       TabOrder = 1
       object Panel6: TPanel
         Left = 1
         Height = 101
         Top = 123
-        Width = 393
+        Width = 425
         Align = alBottom
         Caption = 'Panel6'
         ClientHeight = 101
-        ClientWidth = 393
+        ClientWidth = 425
         ParentFont = False
         TabOrder = 0
         object ToolBar1: TToolBar
           Left = 1
           Top = 1
-          Width = 391
+          Width = 423
           Caption = 'ToolBar1'
           ParentFont = False
           ShowCaptions = True
@@ -254,7 +253,7 @@ object frmdyzedit: Tfrmdyzedit
         object ToolBar2: TToolBar
           Left = 1
           Top = 33
-          Width = 391
+          Width = 423
           Caption = 'ToolBar2'
           ParentFont = False
           ShowCaptions = True
@@ -263,21 +262,25 @@ object frmdyzedit: Tfrmdyzedit
             Left = 30
             Top = 2
             Caption = 'é'
+            OnClick = ToolButton10Click
           end
           object ToolButton11: TToolButton
             Left = 59
             Top = 2
             Caption = 'ě'
+            OnClick = ToolButton11Click
           end
           object ToolButton12: TToolButton
             Left = 1
             Top = 2
             Caption = 'ē'
+            OnClick = ToolButton12Click
           end
           object ToolButton13: TToolButton
             Left = 88
             Top = 2
             Caption = 'è'
+            OnClick = ToolButton13Click
           end
           object ToolButton14: TToolButton
             Left = 117
@@ -290,27 +293,31 @@ object frmdyzedit: Tfrmdyzedit
             Left = 125
             Top = 2
             Caption = 'ī'
+            OnClick = ToolButton15Click
           end
           object ToolButton16: TToolButton
             Left = 154
             Top = 2
             Caption = 'í'
+            OnClick = ToolButton16Click
           end
           object ToolButton17: TToolButton
             Left = 183
             Top = 2
             Caption = 'ǐ'
+            OnClick = ToolButton17Click
           end
           object ToolButton18: TToolButton
             Left = 212
             Top = 2
             Caption = 'ì'
+            OnClick = ToolButton18Click
           end
         end
         object ToolBar3: TToolBar
           Left = 1
           Top = 65
-          Width = 391
+          Width = 423
           Caption = 'ToolBar3'
           ParentFont = False
           ShowCaptions = True
@@ -350,26 +357,31 @@ object frmdyzedit: Tfrmdyzedit
             Left = 125
             Top = 2
             Caption = 'ǖ'
+            OnClick = ToolButton24Click
           end
           object ToolButton25: TToolButton
             Left = 154
             Top = 2
             Caption = 'ǘ'
+            OnClick = ToolButton25Click
           end
           object ToolButton26: TToolButton
             Left = 183
             Top = 2
             Caption = 'ǚ'
+            OnClick = ToolButton26Click
           end
           object ToolButton27: TToolButton
             Left = 212
             Top = 2
             Caption = 'ǜ'
+            OnClick = ToolButton27Click
           end
           object ToolButton28: TToolButton
             Left = 241
             Top = 2
             Caption = 'ü'
+            OnClick = ToolButton28Click
           end
         end
       end
@@ -377,17 +389,16 @@ object frmdyzedit: Tfrmdyzedit
         Left = 1
         Height = 122
         Top = 1
-        Width = 393
+        Width = 425
         Align = alClient
-        Caption = 'Panel7'
         ClientHeight = 122
-        ClientWidth = 393
+        ClientWidth = 425
         ParentFont = False
         TabOrder = 1
         object DBEdit2: TDBEdit
           Left = 24
           Height = 28
-          Top = 24
+          Top = 40
           Width = 100
           DataSource = DataSource2
           CharCase = ecNormal
@@ -396,9 +407,9 @@ object frmdyzedit: Tfrmdyzedit
           TabOrder = 0
         end
         object DBEdit3: TDBEdit
-          Left = 184
+          Left = 208
           Height = 28
-          Top = 24
+          Top = 40
           Width = 100
           DataSource = DataSource2
           CharCase = ecNormal
@@ -435,6 +446,31 @@ object frmdyzedit: Tfrmdyzedit
           ParentFont = False
           TabOrder = 4
         end
+        object Label2: TLabel
+          Left = 24
+          Height = 20
+          Top = 16
+          Width = 30
+          Caption = '拼音'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 208
+          Height = 20
+          Top = 16
+          Width = 30
+          Caption = '组词'
+          ParentColor = False
+        end
+        object BitBtn5: TBitBtn
+          Left = 312
+          Height = 38
+          Top = 72
+          Width = 94
+          Caption = '删除'
+          OnClick = BitBtn5Click
+          TabOrder = 5
+        end
       end
     end
   end
@@ -442,11 +478,11 @@ object frmdyzedit: Tfrmdyzedit
     Left = 0
     Height = 62
     Top = 544
-    Width = 998
+    Width = 989
     Align = alBottom
     Caption = 'Panel1'
     ClientHeight = 62
-    ClientWidth = 998
+    ClientWidth = 989
     ParentFont = False
     TabOrder = 2
     OnClick = Panel1Click
@@ -466,6 +502,7 @@ object frmdyzedit: Tfrmdyzedit
       Top = 10
       Width = 94
       Caption = '新增'
+      OnClick = BitBtn2Click
       ParentFont = False
       TabOrder = 1
     end

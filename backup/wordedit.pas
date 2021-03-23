@@ -14,9 +14,9 @@ type
 
   Tfrmdyzedit = class(TForm)
     BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
+    BitBtn5: TBitBtn;
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
     BitBtn8: TBitBtn;
@@ -27,10 +27,12 @@ type
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     grddyz: TDBGrid;
-    DBGrid2: TDBGrid;
-    Edit1: TEdit;
+    grdpinyin: TDBGrid;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -72,8 +74,10 @@ type
     ToolButton8: TToolButton;
     ToolButton9: TToolButton;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
     procedure BitBtn8Click(Sender: TObject);
@@ -82,13 +86,27 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
+    procedure Panel2Click(Sender: TObject);
     procedure SQLQuery1AfterScroll(DataSet: TDataSet);
     procedure ToolBar1Click(Sender: TObject);
+    procedure ToolButton10Click(Sender: TObject);
+    procedure ToolButton11Click(Sender: TObject);
+    procedure ToolButton12Click(Sender: TObject);
+    procedure ToolButton13Click(Sender: TObject);
+    procedure ToolButton15Click(Sender: TObject);
+    procedure ToolButton16Click(Sender: TObject);
+    procedure ToolButton17Click(Sender: TObject);
+    procedure ToolButton18Click(Sender: TObject);
     procedure ToolButton19Click(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
     procedure ToolButton20Click(Sender: TObject);
     procedure ToolButton21Click(Sender: TObject);
     procedure ToolButton22Click(Sender: TObject);
+    procedure ToolButton24Click(Sender: TObject);
+    procedure ToolButton25Click(Sender: TObject);
+    procedure ToolButton26Click(Sender: TObject);
+    procedure ToolButton27Click(Sender: TObject);
+    procedure ToolButton28Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
     procedure ToolButton3Click(Sender: TObject);
     procedure ToolButton4Click(Sender: TObject);
@@ -118,12 +136,17 @@ begin
 
 end;
 
+procedure Tfrmdyzedit.Panel2Click(Sender: TObject);
+begin
+
+end;
+
 procedure Tfrmdyzedit.SQLQuery1AfterScroll(DataSet: TDataSet);
 begin
   //SQLQuery1.Open;
   //SQLQuery2.SQL.Text := 'select * from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
-  if SQLQuery1.FieldValues['fid'] <> null then
+  if SQLQuery1.FieldValues['fid']<>null then
     begin
       SQLQuery2.Close;
       SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
@@ -135,6 +158,46 @@ end;
 procedure Tfrmdyzedit.ToolBar1Click(Sender: TObject);
 begin
   //TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton10Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton11Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton12Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton13Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton15Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton16Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton17Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton18Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
 end;
 
 procedure Tfrmdyzedit.ToolButton19Click(Sender: TObject);
@@ -160,6 +223,31 @@ begin
 end;
 
 procedure Tfrmdyzedit.ToolButton22Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton24Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton25Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton26Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton27Click(Sender: TObject);
+begin
+  DBEdit2.SelText:=TToolButton(Sender).Caption;
+end;
+
+procedure Tfrmdyzedit.ToolButton28Click(Sender: TObject);
 begin
   DBEdit2.SelText:=TToolButton(Sender).Caption;
 end;
@@ -202,11 +290,16 @@ end;
 procedure Tfrmdyzedit.BitBtn1Click(Sender: TObject);
 begin
   //SQLQuery1.Open;
-  SQLQuery1.SQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
+  //SQLQuery1.SQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
-  SQLQuery1.Params.ParamByName('duoyinzi').AsString := Edit1.text;
-  SQLQuery1.ExecSQL();
-  frmmain.SQLTransaction1.Commit();
+  //SQLQuery1.Params.ParamByName('duoyinzi').AsString := Edit1.text;
+  //SQLQuery1.ExecSQL();
+  //frmmain.SQLTransaction1.Commit();
+end;
+
+procedure Tfrmdyzedit.BitBtn2Click(Sender: TObject);
+begin
+
 end;
 
 procedure Tfrmdyzedit.BitBtn3Click(Sender: TObject);
@@ -220,6 +313,13 @@ begin
   SQLQuery1.Post;
   SQLQuery1.ApplyUpdates;
   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
+end;
+
+procedure Tfrmdyzedit.BitBtn5Click(Sender: TObject);
+begin
+   SQLQuery2.Delete;
+   SQLQuery2.ApplyUpdates;
+   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
 end;
 
 procedure Tfrmdyzedit.BitBtn6Click(Sender: TObject);
@@ -266,6 +366,9 @@ begin
   DBEdit3.DataField:='fciyu';
   grddyz.Columns[0].FieldName:='fid';
   grddyz.Columns[1].FieldName:='fduoyinzi';
+  grdpinyin.Columns[0].FieldName:='fid';
+  grdpinyin.Columns[1].FieldName:='fpinyin';
+  grdpinyin.Columns[2].FieldName:='fciyu';
 end;
 
 end.

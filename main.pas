@@ -57,9 +57,9 @@ end;
 
 procedure Tfrmmain.Panel1Click(Sender: TObject);
 begin
-  SELECT fid,fduoyinzi
-FROM tbl_duoyinzi
-WHERE 1 < (select fduoyinzi_id,group_concat('['||fpinyin||']'||fciyu,',') from tbl_pinyin group by fduoyinzi_id)
+  //SELECT fid,fduoyinzi
+  //FROM tbl_duoyinzi
+  //WHERE 1 < (select fduoyinzi_id,group_concat('['||fpinyin||']'||fciyu,',') from tbl_pinyin group by fduoyinzi_id)
 end;
 
 procedure Tfrmmain.Button1Click(Sender: TObject);
@@ -81,8 +81,8 @@ begin
   except
      on E: Exception do
      begin
-       memo1.Lines.Add(E.Message);
-       memo1.Lines.Add('请检查sqlite数据库是否配置正确。');
+       //memo1.Lines.Add(E.Message);
+       //memo1.Lines.Add('请检查sqlite数据库是否配置正确。');
        showmessage(E.Message);
      end;
   end;

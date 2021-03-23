@@ -1,17 +1,18 @@
 object frmmain: Tfrmmain
   Left = 317
-  Height = 517
+  Height = 646
   Top = 185
-  Width = 761
+  Width = 951
   Caption = 'frmmain'
-  ClientHeight = 517
-  ClientWidth = 761
+  ClientHeight = 646
+  ClientWidth = 951
+  DesignTimePPI = 120
   LCLVersion = '2.0.12.0'
   object DBNavigator1: TDBNavigator
-    Left = 171
-    Height = 25
-    Top = 375
-    Width = 241
+    Left = 214
+    Height = 31
+    Top = 469
+    Width = 301
     BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds
@@ -19,8 +20,8 @@ object frmmain: Tfrmmain
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
-    ClientHeight = 25
-    ClientWidth = 241
+    ClientHeight = 31
+    ClientWidth = 301
     DataSource = DataSource1
     Options = []
     ParentFont = False
@@ -28,50 +29,51 @@ object frmmain: Tfrmmain
   end
   object Panel1: TPanel
     Left = 0
-    Height = 96
+    Height = 120
     Top = 0
-    Width = 761
+    Width = 951
     Align = alTop
     Caption = 'Panel1'
-    ClientHeight = 96
-    ClientWidth = 761
+    ClientHeight = 120
+    ClientWidth = 951
+    ParentFont = False
     TabOrder = 1
     OnClick = Panel1Click
     object Button3: TButton
-      Left = 544
-      Height = 25
-      Top = 16
-      Width = 75
+      Left = 680
+      Height = 31
+      Top = 20
+      Width = 94
       Caption = '激活表'
       OnClick = Button3Click
       ParentFont = False
       TabOrder = 0
     end
     object Button1: TButton
-      Left = 416
-      Height = 25
-      Top = 16
-      Width = 75
+      Left = 520
+      Height = 31
+      Top = 20
+      Width = 94
       Caption = '创建数据库'
       OnClick = Button1Click
       ParentFont = False
       TabOrder = 1
     end
     object Button2: TButton
-      Left = 312
-      Height = 25
-      Top = 16
-      Width = 75
+      Left = 390
+      Height = 31
+      Top = 20
+      Width = 94
       Caption = '创建表'
       OnClick = Button2Click
       ParentFont = False
       TabOrder = 2
     end
     object Button4: TButton
-      Left = 208
-      Height = 25
-      Top = 16
-      Width = 75
+      Left = 272
+      Height = 31
+      Top = 20
+      Width = 94
       Caption = '新增'
       OnClick = Button4Click
       ParentFont = False
@@ -80,26 +82,28 @@ object frmmain: Tfrmmain
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 22
-    Top = 495
-    Width = 761
+    Height = 29
+    Top = 617
+    Width = 951
     Panels = <>
+    ParentFont = False
   end
   object Panel2: TPanel
     Left = 0
-    Height = 399
-    Top = 96
-    Width = 761
+    Height = 497
+    Top = 120
+    Width = 951
     Align = alClient
     Caption = 'Panel2'
-    ClientHeight = 399
-    ClientWidth = 761
+    ClientHeight = 497
+    ClientWidth = 951
+    ParentFont = False
     TabOrder = 3
     object DBGrid1: TDBGrid
       Left = 1
-      Height = 397
+      Height = 495
       Top = 1
-      Width = 759
+      Width = 949
       Align = alClient
       Color = clWindow
       Columns = <>
@@ -116,37 +120,39 @@ object frmmain: Tfrmmain
     KeepConnection = False
     Transaction = SQLTransaction1
     AlwaysUseBigint = False
-    Left = 112
-    Top = 16
+    Left = 120
+    Top = 20
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = dyzdbconn
-    Left = 168
-    Top = 24
+    Left = 200
+    Top = 20
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
     Database = dyzdbconn
     Transaction = SQLTransaction1
     SQL.Strings = (
-      'select fduoyinzi from tbl_duoyinzi'
+      'SELECT fid,fduoyinzi,fyinci'
+      'FROM (select fduoyinzi_id,group_concat(''[''||fpinyin||'']''||fciyu,'',  '') fyinci from tbl_pinyin group by fduoyinzi_id) tblpinyin'
+      '  INNER JOIN tbl_duoyinzi on (tblpinyin.fduoyinzi_id=tbl_duoyinzi.fid);'
     )
     Options = [sqoAutoApplyUpdates]
     Params = <>
-    Left = 666
-    Top = 106
+    Left = 833
+    Top = 133
   end
   object SQLDBLibraryLoader1: TSQLDBLibraryLoader
     Enabled = False
     ConnectionType = 'SQLite3'
     LibraryName = 'D:\lazarusprj\dyzstudy\sqlite3.dll'
-    Left = 32
-    Top = 16
+    Left = 40
+    Top = 20
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
-    Left = 589
-    Top = 106
+    Left = 736
+    Top = 133
   end
 end
