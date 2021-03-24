@@ -319,14 +319,13 @@ end;
 
 procedure Tfrmdyzedit.pinyindelClick(Sender: TObject);
 begin
-  if Application.Messagebox('确认删除记录！', '提示',mb_Iconinformation+MB_OKCANCEL) = mrCancel then
+  if MessageDlg ('确认删除记录！', '删除记录后不可恢复，你确认要删除吗？', mtConfirmation,
+                 [mbYes, mbNo],1) = mrYes then
   begin
     SQLQuery2.Delete;
     SQLQuery2.ApplyUpdates;
     frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
-    //exit;
   end;
-
 end;
 
 procedure Tfrmdyzedit.pinyinaddClick(Sender: TObject);

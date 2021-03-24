@@ -6,26 +6,31 @@ interface
 
 uses
   Classes, SysUtils, SQLite3Conn, SQLDB, SQLDBLib, dbf, DB, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, ExtCtrls, ComCtrls, sqlite3dyn;
+  Graphics, Dialogs, StdCtrls, DBGrids, DBCtrls, ExtCtrls, ComCtrls, Buttons,
+  sqlite3dyn;
 
 type
 
   { Tfrmmain }
 
   Tfrmmain = class(TForm)
+    BitBtn1: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
+    dyzedit: TEdit;
     Panel1: TPanel;
     Panel2: TPanel;
     SQLDBLibraryLoader1: TSQLDBLibraryLoader;
     dyzdbconn: TSQLite3Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    StaticText1: TStaticText;
     StatusBar1: TStatusBar;
+    procedure BitBtn1Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -33,6 +38,7 @@ type
     procedure dyzdbconnAfterConnect(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
+    procedure StaticText1Click(Sender: TObject);
   private
 
   public
@@ -68,6 +74,11 @@ begin
   // SELECT * FROM 表名 ORDER BY RANDOM() limit 1 // 取随机记录
 end;
 
+procedure Tfrmmain.StaticText1Click(Sender: TObject);
+begin
+
+end;
+
 procedure Tfrmmain.Button1Click(Sender: TObject);
 begin
   dyzdbconn.Close;
@@ -92,6 +103,13 @@ begin
        showmessage(E.Message);
      end;
   end;
+end;
+
+procedure Tfrmmain.BitBtn1Click(Sender: TObject);
+begin
+  SQLQuery1.Close;
+  SQLQuery1.Params.ParamByName('duoyinzi').AsString := dyzedit.Text;
+  SQLQuery1.Open;
 end;
 
 procedure Tfrmmain.Button2Click(Sender: TObject);
