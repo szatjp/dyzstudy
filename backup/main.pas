@@ -15,7 +15,6 @@ type
   Tfrmmain = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     Button4: TButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
@@ -32,6 +31,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure dyzdbconnAfterConnect(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
   private
 
@@ -53,6 +53,11 @@ uses wordedit;
 procedure Tfrmmain.dyzdbconnAfterConnect(Sender: TObject);
 begin
 
+end;
+
+procedure Tfrmmain.FormShow(Sender: TObject);
+begin
+  SQLQuery1.Active := True;
 end;
 
 procedure Tfrmmain.Panel1Click(Sender: TObject);

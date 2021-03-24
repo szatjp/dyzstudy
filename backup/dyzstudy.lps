@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="dyzstudy.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <CursorPos Y="16"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -19,9 +19,10 @@
         <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="69"/>
-        <CursorPos X="3" Y="114"/>
-        <UsageCount Value="132"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="58"/>
+        <CursorPos X="28" Y="60"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -31,11 +32,10 @@
         <ComponentName Value="frmdyzedit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="290"/>
-        <CursorPos X="5" Y="297"/>
-        <UsageCount Value="121"/>
+        <TopLine Value="318"/>
+        <CursorPos X="2" Y="326"/>
+        <UsageCount Value="122"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -44,33 +44,33 @@
         <EditorIndex Value="1"/>
         <TopLine Value="1003"/>
         <CursorPos Y="1019"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="C:\lazarus\fpc\3.2.0\source\packages\fcl-db\src\sqldb\sqldb.pp"/>
         <UnitName Value="SQLDB"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="266"/>
         <CursorPos X="15" Y="281"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="469"/>
         <CursorPos Y="488"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
         <UnitName Value="DBCtrls"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="1611"/>
         <CursorPos Y="1627"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -83,133 +83,138 @@
       </Unit7>
       <Unit8>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="2902"/>
         <CursorPos Y="2913"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\docs\xml\lcl\dialogs\displaymessagebox.pas"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit9>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="171" Column="48" TopLine="169"/>
+        <Caret Line="185" Column="51" TopLine="173"/>
       </Position1>
       <Position2>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="177" Column="48" TopLine="170"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="85" Column="10" TopLine="83"/>
       </Position2>
       <Position3>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="183" Column="48" TopLine="171"/>
+        <Caret Line="196" Column="51" TopLine="179"/>
       </Position3>
       <Position4>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="189" Column="48" TopLine="172"/>
+        <Caret Line="137" Column="3" TopLine="135"/>
       </Position4>
       <Position5>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="200" Column="48" TopLine="178"/>
+        <Caret Line="136" Column="3" TopLine="134"/>
       </Position5>
       <Position6>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="154" Column="51" TopLine="144"/>
+        <Caret Line="137" Column="3" TopLine="135"/>
       </Position6>
       <Position7>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="150" Column="51" TopLine="145"/>
+        <Caret Line="138" Column="3" TopLine="136"/>
       </Position7>
       <Position8>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="156" Column="51" TopLine="146"/>
+        <Caret Line="139" Column="3" TopLine="137"/>
       </Position8>
       <Position9>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="167" Column="51" TopLine="147"/>
+        <Caret Line="293" Column="5" TopLine="281"/>
       </Position9>
       <Position10>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="173" Column="51" TopLine="171"/>
+        <Caret Line="294" Column="5" TopLine="282"/>
       </Position10>
       <Position11>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="179" Column="51" TopLine="172"/>
+        <Caret Line="295" Column="5" TopLine="283"/>
       </Position11>
       <Position12>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="185" Column="51" TopLine="173"/>
+        <Caret Line="294" Column="5" TopLine="282"/>
       </Position12>
       <Position13>
-        <Filename Value="main.pas"/>
-        <Caret Line="85" Column="10" TopLine="83"/>
+        <Filename Value="wordedit.pas"/>
+        <Caret Line="296" Column="5" TopLine="284"/>
       </Position13>
       <Position14>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="196" Column="51" TopLine="179"/>
+        <Caret Line="317" Column="4" TopLine="314"/>
       </Position14>
       <Position15>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="137" Column="3" TopLine="135"/>
+        <Caret Line="316" Column="4" TopLine="313"/>
       </Position15>
       <Position16>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="136" Column="3" TopLine="134"/>
+        <Caret Line="293" Column="3" TopLine="291"/>
       </Position16>
       <Position17>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="137" Column="3" TopLine="135"/>
+        <Caret Line="303" Column="3" TopLine="291"/>
       </Position17>
       <Position18>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="138" Column="3" TopLine="136"/>
+        <Caret Line="302" Column="3" TopLine="290"/>
       </Position18>
       <Position19>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="139" Column="3" TopLine="137"/>
+        <Caret Line="297" Column="5" TopLine="290"/>
       </Position19>
       <Position20>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="293" Column="5" TopLine="281"/>
+        <Caret Line="296" Column="5" TopLine="289"/>
       </Position20>
       <Position21>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="294" Column="5" TopLine="282"/>
+        <Caret Line="297" Column="115" TopLine="292"/>
       </Position21>
       <Position22>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="295" Column="5" TopLine="283"/>
+        <Caret Line="377" Column="9" TopLine="350"/>
       </Position22>
       <Position23>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="294" Column="5" TopLine="282"/>
+        <Caret Line="366" Column="53" TopLine="350"/>
       </Position23>
       <Position24>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="296" Column="5" TopLine="284"/>
+        <Caret Line="326" Column="5" TopLine="320"/>
       </Position24>
       <Position25>
         <Filename Value="wordedit.pas"/>
-        <Caret Line="316" Column="21" TopLine="341"/>
+        <Caret Line="322" Column="86" TopLine="306"/>
       </Position25>
       <Position26>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="317" Column="4" TopLine="314"/>
+        <Filename Value="C:\lazarus\docs\xml\lcl\dialogs\displaymessagebox.pas"/>
       </Position26>
       <Position27>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="316" Column="4" TopLine="313"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="114" Column="3" TopLine="69"/>
       </Position27>
       <Position28>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="293" Column="3" TopLine="291"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="113" Column="3" TopLine="94"/>
       </Position28>
       <Position29>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="303" Column="3" TopLine="291"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="61" Column="28" TopLine="59"/>
       </Position29>
       <Position30>
-        <Filename Value="wordedit.pas"/>
-        <Caret Line="302" Column="3" TopLine="290"/>
+        <Filename Value="main.pas"/>
+        <Caret Line="60" Column="28" TopLine="58"/>
       </Position30>
     </JumpHistory>
     <RunParams>

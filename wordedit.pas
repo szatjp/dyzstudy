@@ -17,11 +17,11 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
-    BitBtn5: TBitBtn;
-    BitBtn6: TBitBtn;
+    pinyindel: TBitBtn;
+    pinyinadd: TBitBtn;
     BitBtn7: TBitBtn;
-    BitBtn8: TBitBtn;
-    BitBtn9: TBitBtn;
+    pinyinpost: TBitBtn;
+    pinyinedit: TBitBtn;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
     DBEdit1: TDBEdit;
@@ -78,11 +78,12 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
-    procedure BitBtn5Click(Sender: TObject);
-    procedure BitBtn6Click(Sender: TObject);
+    procedure pinyindelClick(Sender: TObject);
+    procedure pinyinaddClick(Sender: TObject);
     procedure BitBtn7Click(Sender: TObject);
-    procedure BitBtn8Click(Sender: TObject);
+    procedure pinyinpostClick(Sender: TObject);
     procedure DataSource2DataChange(Sender: TObject; Field: TField);
+    procedure DataSource2StateChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -316,14 +317,18 @@ begin
   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
 end;
 
-procedure Tfrmdyzedit.BitBtn5Click(Sender: TObject);
+procedure Tfrmdyzedit.pinyindelClick(Sender: TObject);
 begin
-   SQLQuery2.Delete;
-   SQLQuery2.ApplyUpdates;
-   frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
+  if MessageDlg ('确认删除记录！', '删除记录后不可恢复，你确认要删除吗？', mtConfirmation,
+                 [mbYes, mbNo],1) = mrYes then
+  begin
+    SQLQuery2.Delete;
+    SQLQuery2.ApplyUpdates;
+    frmmain.SQLTransaction1.CommitRetaining;  // CommitRetaining
+  end;
 end;
 
-procedure Tfrmdyzedit.BitBtn6Click(Sender: TObject);
+procedure Tfrmdyzedit.pinyinaddClick(Sender: TObject);
 begin
   SQLQuery2.Append;
   SQLQuery2.FieldValues['fduoyinzi_id'] := SQLQuery1.FieldValues['fid'];
@@ -334,7 +339,7 @@ begin
   SQLQuery1.Append;
 end;
 
-procedure Tfrmdyzedit.BitBtn8Click(Sender: TObject);
+procedure Tfrmdyzedit.pinyinpostClick(Sender: TObject);
 begin
   SQLQuery2.Post;
   SQLQuery2.ApplyUpdates;
@@ -344,6 +349,33 @@ end;
 procedure Tfrmdyzedit.DataSource2DataChange(Sender: TObject; Field: TField);
 begin
 
+end;
+
+procedure Tfrmdyzedit.DataSource2StateChange(Sender: TObject);
+begin
+      case SQLQuery2.State of
+      dsbrowse:
+        begin
+          pinyinadd.Enabled :=true;
+          pinyindel.Enabled :=true;
+          pinyinpost.Enabled :=false;
+          //cancelbtn.Enabled :=false;
+        end;
+      dsinsert:
+        begin
+          pinyinadd.Enabled :=false;
+          pinyindel.Enabled :=false;
+          pinyinpost.Enabled :=true;
+          //cancelbtn.Enabled :=true;
+        end;
+      dsedit:
+        begin
+          pinyinadd.Enabled :=false;
+          pinyindel.Enabled :=false;
+          pinyinpost.Enabled :=true;
+          //cancelbtn.Enabled :=true;
+        end;
+    end;
 end;
 
 procedure Tfrmdyzedit.FormClose(Sender: TObject; var CloseAction: TCloseAction);

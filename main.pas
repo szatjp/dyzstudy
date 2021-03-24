@@ -15,7 +15,6 @@ type
   Tfrmmain = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     Button4: TButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
@@ -32,6 +31,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure dyzdbconnAfterConnect(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
   private
 
@@ -55,11 +55,17 @@ begin
 
 end;
 
+procedure Tfrmmain.FormShow(Sender: TObject);
+begin
+  SQLQuery1.Active := True;
+end;
+
 procedure Tfrmmain.Panel1Click(Sender: TObject);
 begin
   //SELECT fid,fduoyinzi
   //FROM tbl_duoyinzi
   //WHERE 1 < (select fduoyinzi_id,group_concat('['||fpinyin||']'||fciyu,',') from tbl_pinyin group by fduoyinzi_id)
+  // SELECT * FROM 表名 ORDER BY RANDOM() limit 1 // 取随机记录
 end;
 
 procedure Tfrmmain.Button1Click(Sender: TObject);
