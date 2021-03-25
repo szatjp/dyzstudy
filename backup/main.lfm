@@ -3,7 +3,7 @@ object frmmain: Tfrmmain
   Height = 646
   Top = 185
   Width = 951
-  Caption = 'frmmain'
+  Caption = '多音字学习'
   ClientHeight = 646
   ClientWidth = 951
   DesignTimePPI = 120
@@ -48,6 +48,7 @@ object frmmain: Tfrmmain
       OnClick = Button1Click
       ParentFont = False
       TabOrder = 0
+      Visible = False
     end
     object Button2: TButton
       Left = 810
@@ -58,21 +59,23 @@ object frmmain: Tfrmmain
       OnClick = Button2Click
       ParentFont = False
       TabOrder = 1
+      Visible = False
     end
     object Button4: TButton
-      Left = 608
+      Left = 336
       Height = 31
-      Top = 10
+      Top = 13
       Width = 94
       Caption = '新增'
       OnClick = Button4Click
       ParentFont = False
       TabOrder = 2
+      Visible = False
     end
     object BitBtn1: TBitBtn
-      Left = 248
-      Height = 38
-      Top = 8
+      Left = 240
+      Height = 30
+      Top = 13
       Width = 94
       Caption = '查询'
       OnClick = BitBtn1Click
@@ -94,6 +97,15 @@ object frmmain: Tfrmmain
       Caption = '输入多音字250'
       OnClick = StaticText1Click
       TabOrder = 4
+    end
+    object BitBtn2: TBitBtn
+      Left = 496
+      Height = 30
+      Top = 13
+      Width = 94
+      Caption = '测验'
+      OnClick = BitBtn2Click
+      TabOrder = 6
     end
   end
   object StatusBar1: TStatusBar
@@ -125,6 +137,7 @@ object frmmain: Tfrmmain
       Columns = <>
       DataSource = DataSource1
       ParentFont = False
+      ReadOnly = True
       TabOrder = 0
     end
   end
@@ -153,7 +166,7 @@ object frmmain: Tfrmmain
       'SELECT fid,fduoyinzi,fyinci'
       'FROM (select fduoyinzi_id,group_concat(''[''||fpinyin||'']''||fciyu,'',  '') fyinci from tbl_pinyin group by fduoyinzi_id) tblpinyin'
       '  INNER JOIN tbl_duoyinzi on (tblpinyin.fduoyinzi_id=tbl_duoyinzi.fid)'
-      'WHERE fduoyinzi=:duoyinzi;'
+      'WHERE fduoyinzi like :duoyinzi;'
     )
     Options = [sqoAutoApplyUpdates]
     Params = <    

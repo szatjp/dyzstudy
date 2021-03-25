@@ -15,6 +15,7 @@ type
 
   Tfrmmain = class(TForm)
     BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
@@ -31,6 +32,7 @@ type
     StaticText1: TStaticText;
     StatusBar1: TStatusBar;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -63,7 +65,10 @@ end;
 
 procedure Tfrmmain.FormShow(Sender: TObject);
 begin
-  SQLQuery1.Active := True;
+  //SQLQuery1.Active := True;
+  SQLQuery1.Close;
+  SQLQuery1.Params.ParamByName('duoyinzi').AsString := '%';
+  SQLQuery1.Open;
 end;
 
 procedure Tfrmmain.Panel1Click(Sender: TObject);
@@ -107,7 +112,15 @@ end;
 
 procedure Tfrmmain.BitBtn1Click(Sender: TObject);
 begin
+  SQLQuery1.Close;
   SQLQuery1.Params.ParamByName('duoyinzi').AsString := dyzedit.Text;
+  SQLQuery1.Open;
+end;
+
+procedure Tfrmmain.BitBtn2Click(Sender: TObject);
+begin
+  if (ceshi = nil) then Application.CreateForm(Tceshi, ceshi);
+    ceshi.ShowModal;
 end;
 
 procedure Tfrmmain.Button2Click(Sender: TObject);

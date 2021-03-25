@@ -151,18 +151,12 @@ object frmdyzedit: Tfrmdyzedit
         Color = clWindow
         Columns = <        
           item
-            MinSize = 10
-            MaxSize = 200
             Title.Caption = 'ID'
           end        
           item
-            MinSize = 10
-            MaxSize = 200
             Title.Caption = '拼音'
           end        
           item
-            MinSize = 10
-            MaxSize = 200
             Title.Caption = '组词'
           end>
         DataSource = DataSource2
@@ -233,25 +227,25 @@ object frmdyzedit: Tfrmdyzedit
             Style = tbsSeparator
           end
           object ToolButton6: TToolButton
-            Left = 127
+            Left = 125
             Top = 2
             Caption = 'ō'
             OnClick = ToolButton6Click
           end
           object ToolButton7: TToolButton
-            Left = 156
+            Left = 154
             Top = 2
             Caption = 'ó'
             OnClick = ToolButton7Click
           end
           object ToolButton8: TToolButton
-            Left = 185
+            Left = 183
             Top = 2
             Caption = 'ǒ'
             OnClick = ToolButton8Click
           end
           object ToolButton9: TToolButton
-            Left = 214
+            Left = 212
             Top = 2
             Caption = 'ò'
             OnClick = ToolButton9Click
@@ -297,25 +291,25 @@ object frmdyzedit: Tfrmdyzedit
             Style = tbsSeparator
           end
           object ToolButton15: TToolButton
-            Left = 127
+            Left = 125
             Top = 2
             Caption = 'ī'
             OnClick = ToolButton15Click
           end
           object ToolButton16: TToolButton
-            Left = 156
+            Left = 154
             Top = 2
             Caption = 'í'
             OnClick = ToolButton16Click
           end
           object ToolButton17: TToolButton
-            Left = 185
+            Left = 183
             Top = 2
             Caption = 'ǐ'
             OnClick = ToolButton17Click
           end
           object ToolButton18: TToolButton
-            Left = 214
+            Left = 212
             Top = 2
             Caption = 'ì'
             OnClick = ToolButton18Click
@@ -361,31 +355,31 @@ object frmdyzedit: Tfrmdyzedit
             Style = tbsSeparator
           end
           object ToolButton24: TToolButton
-            Left = 127
+            Left = 125
             Top = 2
             Caption = 'ǖ'
             OnClick = ToolButton24Click
           end
           object ToolButton25: TToolButton
-            Left = 156
+            Left = 154
             Top = 2
             Caption = 'ǘ'
             OnClick = ToolButton25Click
           end
           object ToolButton26: TToolButton
-            Left = 185
+            Left = 183
             Top = 2
             Caption = 'ǚ'
             OnClick = ToolButton26Click
           end
           object ToolButton27: TToolButton
-            Left = 214
+            Left = 212
             Top = 2
             Caption = 'ǜ'
             OnClick = ToolButton27Click
           end
           object ToolButton28: TToolButton
-            Left = 243
+            Left = 241
             Top = 2
             Caption = 'ü'
             OnClick = ToolButton28Click

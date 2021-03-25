@@ -149,12 +149,12 @@ begin
   //SQLQuery2.SQL.Text := 'select * from tbl_pinyin where fduoyinzi_id=:duoyinzi_id';
   //SQLQuery1.InsertSQL.Text := 'INSERT INTO tbl_duoyinzi (fduoyinzi) VALUES (:duoyinzi)';
   if SQLQuery1.FieldValues['fid']<>null then
-    begin
+  begin
       SQLQuery2.Close;
       SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
       //SQLQuery1.ExecSQL();
       SQLQuery2.Open;
-    end;
+  end;
 end;
 
 procedure Tfrmdyzedit.ToolBar1Click(Sender: TObject);
@@ -337,6 +337,14 @@ end;
 procedure Tfrmdyzedit.BitBtn7Click(Sender: TObject);
 begin
   SQLQuery1.Append;
+  SQLQuery2.Close;
+  if SQLQuery1.FieldValues['fid']<>null then
+  begin
+      SQLQuery2.Close;
+      SQLQuery2.Params.ParamByName('duoyinzi_id').AsInteger := SQLQuery1.FieldValues['fid'];
+      //SQLQuery1.ExecSQL();
+      SQLQuery2.Open;
+  end;
 end;
 
 procedure Tfrmdyzedit.pinyinpostClick(Sender: TObject);

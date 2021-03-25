@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, main, dbflaz, wordedit
+  Forms, main, dbflaz, wordedit, duoyinzi
   { you can add units after this };
 
 {$R *.res}
@@ -18,6 +18,7 @@ begin
   Application.Initialize;
   Application.CreateForm(Tfrmmain, frmmain);
   Application.CreateForm(Tfrmdyzedit, frmdyzedit);
+  Application.CreateForm(Tceshi, ceshi);
   Application.Run;
 end.
 
